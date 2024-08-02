@@ -1,16 +1,7 @@
+"""
+This module runs initial data cleaning and preparation for model training.
+"""
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import KFold, train_test_split
-from sklearn.metrics import (accuracy_score,
-                             precision_score,
-                             recall_score,
-                             confusion_matrix,
-                             ConfusionMatrixDisplay,
-                             f1_score,
-                             roc_curve,
-                             auc)
 from imblearn.under_sampling import RandomUnderSampler
 
 
@@ -27,14 +18,14 @@ def undersample(data: pd.DataFrame) -> pd.DataFrame:
                           of failures and non failures
     """
     rus = RandomUnderSampler(random_state=42, replacement=True)
-    X = initial_data.drop(
+    X = data.drop(
         columns=["Machine failure"])
-    y = initial_data["Machine failure"]
+    y = data["Machine failure"]
     x_rus, y_rus = rus.fit_resample(X, y)
 
     undersampled_data_df = pd.concat([x_rus, y_rus], axis=1)
     print("Completed undersampling")
-    print(f"Original data lenght: {len(initial_data)}")
+    print(f"Original data lenght: {len(data)}")
     print(f"Undersampled data lenght: {len(undersampled_data_df)}")
     return undersampled_data_df
 
@@ -64,15 +55,21 @@ def pipeline(data: pd.DataFrame) -> pd.DataFrame:
         data: pd.DataFrame - the initial data read in as a 
                             dataframe from the csv file
     returns:
-        pd.DataFrame - the cleaned data ready for model training
+        X: - the processed features data ready for model training
+        y: - the processed target data ready for model training
     """
     undersampled_data = undersample(data)
     cleaned_data = category_to_binary(undersampled_data)
-
+    cleaned_data.drop(columns=["Type", "Product ID",
+                                                  "UDI","TWF", "HDF", 
+                                                  "PWF", "OSF", "RNF"], 
+                                                  inplace=True)
+    X = cleaned_data.drop(columns=["Machine failure"])
+    y = cleaned_data["Machine failure"]
     print("Data ready for model training")
-    return cleaned_data
+    return X, y
 
 if __name__ == '__main__':
     initial_data = pd.read_csv("../data/ai4i2020.csv")
 
-    cleaned_data = pipeline(initial_data)
+    X, y = pipeline(initial_data)
