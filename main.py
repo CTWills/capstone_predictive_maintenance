@@ -17,7 +17,6 @@ if __name__ == '__main__':
         "HDF": "oversample",
         "PWF": "oversample",
         "OSF": "oversample",
-        "RNF": "undersample"
     }
 
     initial_data = pd.read_csv("data/ai4i2020.csv")

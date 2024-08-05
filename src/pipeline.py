@@ -28,6 +28,7 @@ def undersample(data: pd.DataFrame, target: str) -> pd.DataFrame:
     print("Completed undersampling")
     print(f"Original data lenght: {len(data)}")
     print(f"Undersampled data lenght: {len(undersampled_data_df)}")
+    print(undersampled_data_df[target].value_counts())
     return undersampled_data_df
 
 
