@@ -99,7 +99,9 @@ def pipeline(data: pd.DataFrame, target: str, sample_strategy: str = None) -> pd
                       "Process temperature [K]",
                       "Rotational speed [rpm]", 
                       "Torque [Nm]",
-                      "Tool wear [min]"]]
+                      "Tool wear [min]",
+                      "L",
+                      "M"]]
     y = cleaned_data[target]
     print("Data ready for model training")
     return X, y
