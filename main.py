@@ -14,7 +14,7 @@ if __name__ == '__main__':
     models = {
         "Machine failure": "undersample",
         "TWF": "undersample",
-        "HDF": "oversample",
+        "HDF": "undersample",
         "PWF": "oversample",
         "OSF": "oversample",
     }

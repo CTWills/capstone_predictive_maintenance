@@ -61,7 +61,6 @@ def test_model(model: LogisticRegression, X: pd.DataFrame, y: pd.DataFrame | pd.
     trained_model, X_train, y_train, X_test, y_test = train_model(model, 
                                                                   X, 
                                                                   y)
-
     for train_set, val_set in kf.split(X_train):
         X_train_split, y_train_split = X_train.iloc[train_set], y_train.iloc[train_set]
         X_val_split, y_val_split = X_train.iloc[val_set], y_train.iloc[val_set]
@@ -77,6 +76,7 @@ def test_model(model: LogisticRegression, X: pd.DataFrame, y: pd.DataFrame | pd.
     trained_model.fit(X_train, y_train)
 
     # Create and save confusion matrix for the model
+    print(f"y_test: {y_test.value_counts()}")
     ConfusionMatrixDisplay(confusion_matrix(
         y_test, trained_model.predict(X_test))).plot()
     plt.title(f"Target: {y.name}")
