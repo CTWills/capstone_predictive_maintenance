@@ -82,3 +82,8 @@ Precision: 0.96 <br>
 Recall: 0.98 <br>
 F1: 0.96 <br>
 ![screenshot](images/confusion_matrix_TWF.png)
+
+# Streamlit
+You can use the model here at [Streamlit](https://ctwills-capstone-predictive-maintenance-streamlit-app-yjzeo6.streamlit.app/).
+
+To run locally, install the packages in requirements_streamlit.txt file and run the streamlit_app.py file by entering ```streamlit run streamlit_app.py```
