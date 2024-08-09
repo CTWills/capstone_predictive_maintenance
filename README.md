@@ -39,3 +39,17 @@ df= 342.4998844387028 <br>
 
 The two-tailed p-value of 0.038 is less than the alpha of 0.05. There is sufficient statistical evidence to reject the null hypothesis.
 The negative test statistic indicates the average rmp of failed machines is slower than the working machines.
+
+# Logistic Regression Models
+
+![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_HDF.png)
+
+![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_Machine failure.png)
+
+![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_OSF.png)
+
+![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_PWF.png)
+
+![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_RNF.png)
+
+![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_TWF.png)
