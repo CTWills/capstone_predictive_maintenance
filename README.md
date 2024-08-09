@@ -40,16 +40,45 @@ df= 342.4998844387028 <br>
 The two-tailed p-value of 0.038 is less than the alpha of 0.05. There is sufficient statistical evidence to reject the null hypothesis.
 The negative test statistic indicates the average rmp of failed machines is slower than the working machines.
 
-# Logistic Regression Models
 
+# Logistic Regression Models
+Do to the huge imbalance of the failure classes, imblearn's oversampling methods and undersampling methods were used to correct this imbalance as best it could. All models underwent both methods and the one with the best performance is listed below.<br>
+![screenshot](images/imbalance.png)
+
+For a HDF undersampling performed the best<br>
+Accuracy: 0.97 <br>
+Precision: 0.93 <br>
+Recall: 1.0 <br>
+F1: 0.96 <br>
 ![screenshot](images/confusion_matrix_HDF.png)
 
-![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_Machine_failure.png)
+For a general machine failure undersampling performed the best<br>
+Accuracy: 0.83 <br>
+Precision: 0.85 <br>
+Recall: 0.84 <br>
+F1: 0.84 <br>
+![screenshot](images/confusion_matrix_Machine_failure.png)
 
-![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_OSF.png)
+For a OSF oversampling performed the best<br>
+Accuracy: 0.998 <br>
+Precision: 0.94 <br>
+Recall: 0.87 <br>
+F1: 0.91 <br>
+![screenshot](images/confusion_matrix_OSF.png)
 
-![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_PWF.png)
+For a PWF oversampling performed the best<br>
+Accuracy: 0.997 <br>
+Precision: 0.94 <br>
+Recall: 0.78 <br>
+F1: 0.84 <br>
+![screenshot](images/confusion_matrix_PWF.png)
 
-![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_RNF.png)
+As you can see below, there are so few RNF data points that is was not possible with either methods to produce a decent model. No model was created for this type of failure.<br>
+![screenshot](images/confusion_matrix_RNF.png)
 
-![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_TWF.png)
+For a TWF undersampling performed the best<br>
+Accuracy: 0.97 <br>
+Precision: 0.96 <br>
+Recall: 0.98 <br>
+F1: 0.96 <br>
+![screenshot](images/confusion_matrix_TWF.png)
