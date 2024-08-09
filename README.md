@@ -42,9 +42,9 @@ The negative test statistic indicates the average rmp of failed machines is slow
 
 # Logistic Regression Models
 
-![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_HDF.png)
+![screenshot](images/confusion_matrix_HDF.png)
 
-![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_Machine failure.png)
+![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_Machine_failure.png)
 
 ![screenshot](https://github.com/CTWills/capstone_predictive_maintenance/tree/main/images/confusion_matrix_OSF.png)
 
